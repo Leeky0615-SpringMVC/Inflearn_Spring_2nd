@@ -20,19 +20,26 @@ public class AppConfig {
 
     /**
      * Bean -> 스프링 컨테이너로 들어감
+     * @Bean memberService -> new MemoryMemberRepository()
+     * @Bean orderService -> new MemoryMemberRepository()
+     * 이렇게 되면 MemoryMemberRepository()가 2번 호출돼 Singleton이
+     * 깨지지 않을까 하는 의문이 생긴다..
      */
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());

@@ -1,4 +1,4 @@
-package hello.core.beanfind;
+package hello.core.beanFind;
 
 import hello.core.AppConfig;
 import org.junit.jupiter.api.DisplayName;

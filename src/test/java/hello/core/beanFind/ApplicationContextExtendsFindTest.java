@@ -1,6 +1,5 @@
-package hello.core.beanfind;
+package hello.core.beanFind;
 
-import hello.core.AppConfig;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
